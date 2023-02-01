@@ -42,9 +42,13 @@ public class Main
                 P[i][j] = new Player(tName);
                 System.out.println("Enter number of goals for " + P[i][j].getPlayerName() + ": ");
                 playerGoals[i][j] = Integer.parseInt(inp.nextLine());
-                //T[i].setTotalGoals(playerGoals[i][j]);
+                P[i][j].setPlayerGoals(playerGoals[i][j]);
+                T[i].setTotalGoals(playerGoals[i][j]);
                 System.out.println("Enter number of assists for " + P[i][j].getPlayerName() + ": ");
                 playerAssists[i][j] = Integer.parseInt(inp.nextLine());
+                P[i][j].setPlayerAssists(playerAssists[i][j]);
+                T[i].setTotalAssists(playerAssists[i][j]);
+                T[i].setRating();
             }
         }
 
@@ -62,7 +66,7 @@ public class Main
             totalT = T[i].getTotalGoals() + T[i].getTotalAssists();
             System.out.print("Total - " + totalT + "     ");
             System.out.print("Budget - $" + T[i].getTotalBudget() + "\n");
-            System.out.print("Rating: " + T[i].getTeamRating() + " stars");
+            System.out.print("Rating: " + T[i].getTeamRating() + " stars\n");
         }
 
         System.out.println();
@@ -71,16 +75,16 @@ public class Main
         System.out.println("================================");
         for (int i=0;i<no_of_teams;i++)
         {
-            System.out.println(T[i].getTeamName());
             for (int j=0;j<no_of_players;j++)
             {
-                System.out.println(P[i][j].getPlayerName());
-                System.out.print("G - " + P[i][j].getPlayerGoals() + "     ");
+                System.out.println(T[i].getTeamName());
+                System.out.print(P[i][j].getPlayerName());
+                System.out.print(":     G - " + P[i][j].getPlayerGoals() + "     ");
                 System.out.print("A - " + P[i][j].getPlayerAssists() + "     ");
                 totalT = P[i][j].getPlayerGoals() + P[i][j].getPlayerAssists();
                 System.out.print("Total - " + totalT);
+                System.out.println();
             }
-            System.out.println();
         }
     }
 }
