@@ -49,7 +49,7 @@ public class Team
     }
 
     //Getters
-    public String getName()
+    public String getTeamName()
     {
         return teamName;
     }
