@@ -6,6 +6,7 @@ public class Player
     private int playerGoals;
     private int playerAssists;
 
+    //Constructor
     public Player(String name)
     {
         this.playerName = name;
@@ -23,7 +24,6 @@ public class Player
     }
 
     //Getters
-
     public String getPlayerName()
     {
         return playerName;

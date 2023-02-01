@@ -9,11 +9,12 @@ public class Team
     private int teamAssists;
     private double teamBudget;
 
+    //Constructor
     public Team(String name)
     {
         this.teamName = name;
         Random random = new Random();
-        this.teamBudget = random.nextInt(100000);
+        this.teamBudget = random.nextInt(100000); // random value
     }
 
     //Setters
