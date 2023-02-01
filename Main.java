@@ -9,7 +9,6 @@ public class Main
         System.out.println("FANTASY HOCKEY APPLICATION\n" +
                 "TEAM ENTRY\n" +
                 "================================");
-
         //--------------------------------------------------
 
         int no_of_teams = 3;
@@ -26,23 +25,30 @@ public class Main
             T[i] = new Team(tName);
         }
 
-        int [][] playerGoals = new int[no_of_teams][0];
-        int [][] playerAssists = new int[no_of_teams][0];
+        int [][] playerGoals = new int[no_of_teams][no_of_players];
+        int [][] playerAssists = new int[no_of_teams][no_of_players];
+
+        System.out.println();
+        System.out.println("PLAYER ENTRY\n" +
+                "================================");
 
         for (int i=0;i<no_of_teams;i++)
         {
             System.out.println("Enter players for " + T[i].getTeamName() + ": ");
             for (int j=0;j<no_of_players;j++)
             {
-                System.out.println("Enter name for Player #" + (j+1));
+                System.out.println("Enter name for Player # " + (j+1));
                 tName = inp.nextLine();
                 P[i][j] = new Player(tName);
                 System.out.println("Enter number of goals for " + P[i][j].getPlayerName() + ": ");
-                playerGoals[i][j] = inp.nextInt();
+                playerGoals[i][j] = Integer.parseInt(inp.nextLine());
+                //T[i].setTotalGoals(playerGoals[i][j]);
                 System.out.println("Enter number of assists for " + P[i][j].getPlayerName() + ": ");
-                playerAssists[i][j] = inp.nextInt();
+                playerAssists[i][j] = Integer.parseInt(inp.nextLine());
             }
         }
+
+        // REPORT
 
         int totalT;
         //--------------------------------------------------

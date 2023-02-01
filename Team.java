@@ -19,12 +19,12 @@ public class Team
     //Setters
     public void setTotalGoals(int goals)
     {
-        this.teamGoals = goals;
+        this.teamGoals = this.teamGoals + goals;
     }
 
     public void setTotalAssists(int assists)
     {
-        this.teamAssists = assists;
+        this.teamAssists = this.teamAssists + assists;
     }
 
     public void setRating()
