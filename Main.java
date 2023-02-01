@@ -1,3 +1,6 @@
+// “Ready for Marking”
+// Josiah
+
 import java.util.Scanner;
 
 public class Main
