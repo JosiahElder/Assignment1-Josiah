@@ -54,7 +54,7 @@ public class Team
         return teamName;
     }
 
-    public double getBudget()
+    public double getTotalBudget()
     {
         return teamBudget;
     }
